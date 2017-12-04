@@ -20,7 +20,7 @@ PROFILE_D_DIR=$BUILD_DIR/.profile.d
 BASIC_FILENAME=instantclient-basic-linux.x64-12.1.0.2.0.zip
 SDK_FILENAME=instantclient-sdk-linux.x64-12.1.0.2.0.zip
 
-MIRROR=https://github.com/guilhermeesteves-luizalabs/heroku-buildpack-nodejs-oracledb
+MIRROR=https://github.com/guilhermeesteves-luizalabs/heroku-buildpack-nodejs-oracledb/blob/master
 
 if [ ! -f $CACHE_DIR/$BASIC_FILENAME ]; then
     indent "Downloading $BASIC_FILENAME..."
