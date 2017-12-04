@@ -34,12 +34,9 @@ if [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
     wget $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME?raw=true
 fi
 
-
-mv $CACHE_DIR/$SDK_FILENAME?raw=true $CACHE_DIR/$SDK_FILENAME
-mv $CACHE_DIR/$BASIC_FILENAME?raw=true $CACHE_DIR/$BASIC_FILENAME
-
-ls -lh $CACHE_DIR/$BASIC_FILENAME
-ls -lh $CACHE_DIR/$SDK_FILENAME
+echo "ta indo... :)"
+pwd
+ls $(pwd)
 
 mkdir -pv $ORACLE_DIR
 
