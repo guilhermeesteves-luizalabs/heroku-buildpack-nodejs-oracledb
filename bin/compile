@@ -32,12 +32,12 @@ if [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
     curl -# -o $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME
 fi
 
-echo "ls do ORACLE_DIR"
-ls $ORACLE_DIR
-
 mkdir -p $ORACLE_DIR
 echo $CACHE_DIR
 ls $CACHE_DIR
+
+echo "ls do ORACLE_DIR"
+ls $ORACLE_DIR
 indent "Extracting $BASIC_FILENAME..."
 unzip -qq $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
 indent "Extracting $SDK_FILENAME..."
