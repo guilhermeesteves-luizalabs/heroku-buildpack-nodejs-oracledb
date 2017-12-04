@@ -40,7 +40,7 @@ echo "ls do ORACLE_DIR"
 ls $ORACLE_DIR
 indent "Extracting $BASIC_FILENAME..."
 #unzip -qq $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
-unzip -qq $CACHE_DIR/$BASIC_FILENAME -d /tmp/build/vendor/oracle
+unzip -qq /tmp/cache/instantclient-basic-linux.x64-12.1.0.2.0.zip -d /tmp/build/vendor/oracle
 indent "Extracting $SDK_FILENAME..."
 unzip -qq $CACHE_DIR/$SDK_FILENAME -d $ORACLE_DIR
 
