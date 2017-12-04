@@ -50,8 +50,10 @@ export OCI_INC_DIR=$INSTANTCLIENT_DIR/sdk/include
 
 indent "Downloading and install nvm..."
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
-source ~/.bash_profile 
-source ~/.bashrc
+
+indent "Exporting nvm..."
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 indent "Installing npm and node from nvm..."
 nvm install 9.0.0
