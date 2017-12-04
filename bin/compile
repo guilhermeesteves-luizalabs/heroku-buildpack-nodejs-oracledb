@@ -20,31 +20,27 @@ PROFILE_D_DIR=$BUILD_DIR/.profile.d
 BASIC_FILENAME=instantclient-basic-linux.x64-12.1.0.2.0.zip
 SDK_FILENAME=instantclient-sdk-linux.x64-12.1.0.2.0.zip
 
-MIRROR=https://github.com/guilhermeesteves-luizalabs/heroku-buildpack-nodejs-oracledb/blob/master
-indent "antes do if do wget"
-if [ ! -f $CACHE_DIR/$BASIC_FILENAME ]; then
-    indent "Downloading $BASIC_FILENAME..."
-    #curl -# -o $CACHE_DIR/$BASIC_FILENAME $MIRROR/$BASIC_FILENAME
-    wget $CACHE_DIR/$BASIC_FILENAME $MIRROR/$BASIC_FILENAME?raw=true
-fi
+#MIRROR=https://github.com/guilhermeesteves-luizalabs/heroku-buildpack-nodejs-oracledb/blob/master
 
-if [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
-    indent "Downloading $SDK_FILENAME..."
-    #curl -# -o $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME
-    wget $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME?raw=true
-fi
+#if [ ! -f $CACHE_DIR/$BASIC_FILENAME ]; then
+#    indent "Downloading $BASIC_FILENAME..."
+#    curl -# -o $CACHE_DIR/$BASIC_FILENAME $MIRROR/$BASIC_FILENAME
+#    wget $CACHE_DIR/$BASIC_FILENAME $MIRROR/$BASIC_FILENAME?raw=true
+#fi
 
-echo "ta indo... :)"
-pwd
-ls $(pwd)
+#f [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
+#    indent "Downloading $SDK_FILENAME..."
+#    #curl -# -o $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME
+#    wget $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME?raw=true
+#fi
 
 mkdir -pv $ORACLE_DIR
 
 indent "Extracting $BASIC_FILENAME..."
-unzip  $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
+unzip  $(pwd)/$BASIC_FILENAME -d $ORACLE_DIR
 
 indent "Extracting $SDK_FILENAME..."
-unzip  $CACHE_DIR/$SDK_FILENAME -d $ORACLE_DIR
+unzip  $(pwd)/$SDK_FILENAME -d $ORACLE_DIR
 
 indent "Symlinking libclntsh.so..."
 ln -s libclntsh.so.12.1 $INSTANTCLIENT_DIR/libclntsh.so
