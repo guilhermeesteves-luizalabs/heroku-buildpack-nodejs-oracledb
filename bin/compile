@@ -32,7 +32,7 @@ if [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
     curl -# -o $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME
 fi
 
-mkdir -p $ORACLE_DIR
+mkdir -pv $ORACLE_DIR
 echo $CACHE_DIR
 ls $CACHE_DIR
 
