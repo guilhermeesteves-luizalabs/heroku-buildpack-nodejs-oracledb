@@ -17,8 +17,8 @@ ORACLE_DIR=$VENDOR_DIR/oracle
 INSTANTCLIENT_DIR=$ORACLE_DIR/instantclient_12_1
 PROFILE_D_DIR=$BUILD_DIR/.profile.d
 
-BASIC_FILENAME=instantclient-basic-linux.x64-12.1.0.2.0.zip
-SDK_FILENAME=instantclient-sdk-linux.x64-12.1.0.2.0.zip
+BASIC_FILENAME=instantclient-basic-linux.x64-12.1.0.2.0.zip?raw=true
+SDK_FILENAME=instantclient-sdk-linux.x64-12.1.0.2.0.zip?raw=true
 
 MIRROR=https://github.com/guilhermeesteves-luizalabs/heroku-buildpack-nodejs-oracledb/blob/master
 
