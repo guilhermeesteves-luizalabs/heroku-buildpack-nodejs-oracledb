@@ -20,7 +20,7 @@ PROFILE_D_DIR=$BUILD_DIR/.profile.d
 BASIC_FILENAME=instantclient-basic-linux.x64-12.1.0.2.0.zip
 SDK_FILENAME=instantclient-sdk-linux.x64-12.1.0.2.0.zip
 
-MIRROR=http://michaelbuhler.com
+MIRROR=https://github.com/guilhermeesteves-luizalabs/heroku-buildpack-nodejs-oracledb
 
 if [ ! -f $CACHE_DIR/$BASIC_FILENAME ]; then
     indent "Downloading $BASIC_FILENAME..."
@@ -39,8 +39,7 @@ ls $CACHE_DIR
 echo "ls do ORACLE_DIR"
 ls $ORACLE_DIR
 indent "Extracting $BASIC_FILENAME..."
-#unzip -qq $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
-unzip -qq /tmp/cache/instantclient-basic-linux.x64-12.1.0.2.0.zip -d /tmp/build/vendor/oracle
+unzip -qq $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
 indent "Extracting $SDK_FILENAME..."
 unzip -qq $CACHE_DIR/$SDK_FILENAME -d $ORACLE_DIR
 
