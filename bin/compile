@@ -17,21 +17,21 @@ ORACLE_DIR=$VENDOR_DIR/oracle
 INSTANTCLIENT_DIR=$ORACLE_DIR/instantclient_12_1
 PROFILE_D_DIR=$BUILD_DIR/.profile.d
 
-BASIC_FILENAME=instantclient-basic-linux.x64-12.1.0.2.0.zip?raw=true
-SDK_FILENAME=instantclient-sdk-linux.x64-12.1.0.2.0.zip?raw=true
+BASIC_FILENAME=instantclient-basic-linux.x64-12.1.0.2.0.zip
+SDK_FILENAME=instantclient-sdk-linux.x64-12.1.0.2.0.zip
 
 MIRROR=https://github.com/guilhermeesteves-luizalabs/heroku-buildpack-nodejs-oracledb/blob/master
 indent "antes do if do wget"
 if [ ! -f $CACHE_DIR/$BASIC_FILENAME ]; then
     indent "Downloading $BASIC_FILENAME..."
     #curl -# -o $CACHE_DIR/$BASIC_FILENAME $MIRROR/$BASIC_FILENAME
-    wget $CACHE_DIR/$BASIC_FILENAME $MIRROR/$BASIC_FILENAME
+    wget $CACHE_DIR/$BASIC_FILENAME $MIRROR/$BASIC_FILENAME?raw=true
 fi
 
 if [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
     indent "Downloading $SDK_FILENAME..."
     #curl -# -o $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME
-    wget $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME
+    wget $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME?raw=true
 fi
 
 mkdir -pv $ORACLE_DIR
