@@ -5,6 +5,9 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+echo $BUILD_DIR
+echo $ENV_DIR
+
 indent() {
     echo "       $*" || true
 }
@@ -30,6 +33,8 @@ if [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
 fi
 
 mkdir -p $ORACLE_DIR
+echo $CACHE_DIR
+ls $CACHE_DIR
 indent "Extracting $BASIC_FILENAME..."
 unzip -qq $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
 indent "Extracting $SDK_FILENAME..."
