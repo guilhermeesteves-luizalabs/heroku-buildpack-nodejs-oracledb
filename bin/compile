@@ -34,16 +34,18 @@ if [ ! -f $CACHE_DIR/$SDK_FILENAME ]; then
     wget $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME?raw=true
 fi
 
-mkdir -pv $ORACLE_DIR
-echo $CACHE_DIR
-ls $CACHE_DIR
 
-echo "ls do ORACLE_DIR"
-ls $ORACLE_DIR
+ls -lh $CACHE_DIR/$SDK_FILENAME
+
+ls -lh $CACHE_DIR/$BASIC_FILENAME
+
+mkdir -pv $ORACLE_DIR
+
 indent "Extracting $BASIC_FILENAME..."
-unzip -qq $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
+unzip  $CACHE_DIR/$BASIC_FILENAME -d $ORACLE_DIR
+
 indent "Extracting $SDK_FILENAME..."
-unzip -qq $CACHE_DIR/$SDK_FILENAME -d $ORACLE_DIR
+unzip  $CACHE_DIR/$SDK_FILENAME -d $ORACLE_DIR
 
 indent "Symlinking libclntsh.so..."
 ln -s libclntsh.so.12.1 $INSTANTCLIENT_DIR/libclntsh.so
