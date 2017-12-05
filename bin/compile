@@ -45,7 +45,8 @@ indent "Extracting $SDK_FILENAME..."
 unzip  $(pwd)/$SDK_FILENAME -d $ORACLE_DIR
 
 indent "Symlinking libclntsh.so..."
-mv $ORACLE_DIR/instantclient_12_1 /opt/oracle/instantclient
+cp -R $ORACLE_DIR/instantclient_12_1 /opt/oracle/instantclient
+#mv $ORACLE_DIR/instantclient_12_1 /opt/oracle/instantclient
 
 mv /opt/oracle/instantclient/libclntsh.so.12.1 /opt/oracle/instantclient/libclntsh.so
 
