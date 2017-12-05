@@ -34,7 +34,7 @@ SDK_FILENAME=instantclient-sdk-linux.x64-12.1.0.2.0.zip
 #    wget $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME?raw=true
 #fi
 
-mkdir -pv /opt/oracle
+sudo mkdir -pv /opt/oracle
 
 mkdir -pv $ORACLE_DIR
 
