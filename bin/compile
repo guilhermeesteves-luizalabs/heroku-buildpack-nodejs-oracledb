@@ -34,6 +34,8 @@ SDK_FILENAME=instantclient-sdk-linux.x64-12.1.0.2.0.zip
 #    wget $CACHE_DIR/$SDK_FILENAME $MIRROR/$SDK_FILENAME?raw=true
 #fi
 
+mkdir -pv /opt/oracle
+
 mkdir -pv $ORACLE_DIR
 
 indent "Extracting $BASIC_FILENAME..."
@@ -43,10 +45,12 @@ indent "Extracting $SDK_FILENAME..."
 unzip  $(pwd)/$SDK_FILENAME -d $ORACLE_DIR
 
 indent "Symlinking libclntsh.so..."
-mv $INSTANTCLIENT_DIR/libclntsh.so.12.1 $INSTANTCLIENT_DIR/libclntsh.so
+mv $ORACLE_DIR/instantclient_12_1 /opt/oracle/instantclient
 
-export OCI_LIB_DIR=$INSTANTCLIENT_DIR
-export OCI_INC_DIR=$INSTANTCLIENT_DIR/sdk/include
+mv /opt/oracle/instantclient/libclntsh.so.12.1 /opt/oracle/instantclient/libclntsh.so
+
+export OCI_LIB_DIR=/opt/oracle/instantclient
+export OCI_INC_DIR=/opt/oracle/instantclient/sdk/include
 
 indent "Installing oracledb from npm..."
 THIS_DIR=`pwd`
