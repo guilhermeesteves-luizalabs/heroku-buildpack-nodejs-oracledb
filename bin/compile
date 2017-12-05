@@ -48,21 +48,10 @@ ln -s libclntsh.so.12.1 $INSTANTCLIENT_DIR/libclntsh.so
 export OCI_LIB_DIR=$INSTANTCLIENT_DIR
 export OCI_INC_DIR=$INSTANTCLIENT_DIR/sdk/include
 
-indent "Downloading and install nvm..."
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
-
-indent "Exporting nvm..."
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-indent "Installing npm and node from nvm..."
-nvm install 9.0.0
-nvm alias default 9.0.0
-
 indent "Installing oracledb from npm..."
 THIS_DIR=`pwd`
 cd $BUILD_DIR
-npm install oracledb
+#npm install oracledb
 cd $THIS_DIR
 
 indent "Saving environment setup script..."
